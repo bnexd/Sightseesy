@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Toolbar.TitleText.Expanded" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

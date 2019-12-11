@@ -6,17 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.tomtom.router.dagger.inject
-import com.tomtom.router.databinding.FragmentTripsBinding
+import com.tomtom.router.databinding.FragmentExploreBinding
 import com.tomtom.router.ui.ScopedFragment
 import javax.inject.Inject
 
-class TripFragment : ScopedFragment() {
+class ExploreFragment : ScopedFragment() {
 
-    private lateinit var binding: FragmentTripsBinding
+    private lateinit var binding: FragmentExploreBinding
     private lateinit var mContext: Context
 
     @Inject
-    lateinit var tripViewModel: TripViewModel
+    lateinit var exploreViewModel: TripViewModel
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -29,7 +29,7 @@ class TripFragment : ScopedFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTripsBinding.inflate(inflater, container, false)
+        binding = FragmentExploreBinding.inflate(inflater, container, false)
         return binding.root
     }
 

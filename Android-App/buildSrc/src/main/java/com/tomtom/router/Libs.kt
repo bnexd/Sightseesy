@@ -41,11 +41,11 @@ object Libs {
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-beta3"
         const val recyclerView = "androidx.recyclerview:recyclerview:1.1.0-beta05"
         const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+        const val cardView = "androidx.cardview:cardview:1.0.0"
 
         object Navigation {
             private const val version = "2.2.0-rc01"
             const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
-            const val runtime = "androidx.navigation:navigation-runtime-ktx:$version"
             const val ui = "androidx.navigation:navigation-ui-ktx:$version"
             const val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
         }

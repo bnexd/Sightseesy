@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/tripsFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.tomtom.router.ui.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/tripsFragment"
+        android:name="com.tomtom.router.ui.trips.TripsFragment"
+        android:label="TripsFragment"
+        tools:layout="@layout/fragment_trips" />
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.tomtom.router.ui.trips.ExploreFragment"
+        android:label="ExploreFragment"
+        tools:layout="@layout/fragment_explore" />
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.tomtom.router.ui.trips.FavoritesFragment"
+        android:label="FavoritesFragment"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.tomtom.router.ui.trips.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>
