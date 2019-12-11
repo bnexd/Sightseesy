@@ -7,14 +7,15 @@ import "./css/Navigation-with-Search.css";
 import "./css/styles.css";
 import Search from "./components/Welcome/Search";
 import Map from "./components/Welcome/Map";
+import Footer from "./components/Layout/Footer";
 
 function App() {
     return (
         <>
             <Header />
-
             <Search />
             <Map />
+            <Footer />
         </>
     );
 }

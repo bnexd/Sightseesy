@@ -1,8 +1,6 @@
 import React from "react";
-import app from "../../firebase";
 
 const Header = () => {
-    const user = app.auth().currentUser;
     return (
         <nav
             className="navbar navbar-light navbar-expand-md navigation-clean-search"
@@ -48,7 +46,7 @@ const Header = () => {
                     </ul>
                     <form className="form-inline mr-auto" target="_self"></form>
                     <div className="dropdown">
-                        <p>Demo Account</p>
+                        <p>Max Mustermann</p>
                     </div>
                 </div>
             </div>
