@@ -1,0 +1,16 @@
+.navbar navbar-light navbar-expand-md navigation-clean-search {
+    background-color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 400px) {
+    .card {
+        margin: 0px 100px 30px 100px;
+        border-radius: 0.25em;
+    }
+}
+@media screen and (min-width: 1500px) {
+    .card {
+        margin: 0px 500px 30px 500px;
+        border-radius: 0.25em;
+    }
+}
