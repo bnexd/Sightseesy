@@ -85,11 +85,15 @@ dependencies {
     implementation Libs.Kotlin.Coroutines.core
     implementation Libs.Kotlin.Coroutines.android
     implementation Libs.Kotlin.Coroutines.reactive
+    implementation Libs.Kotlin.Coroutines.rx2
 
     implementation Libs.Google.material
 
     implementation Libs.Google.Firebase.analytics
     implementation Libs.Google.Firebase.auth
+
+    kapt Libs.Google.Dagger.compiler
+    implementation Libs.Google.Dagger.dagger
 
     implementation Libs.Coil.coil
 
@@ -109,6 +113,8 @@ dependencies {
     implementation Libs.ReactiveX.rxKotlin
 
     implementation Libs.ThreeTen.threeTen
+
+    implementation Libs.TomTom.sdk
 
     testImplementation Libs.Test.junit
     androidTestImplementation Libs.AndroidX.Test.junitExt

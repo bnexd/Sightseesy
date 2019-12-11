@@ -1,7 +1,8 @@
-package com.tomtom.router
+package com.tomtom.router.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.tomtom.router.R
 
 class MainActivity : AppCompatActivity() {
 

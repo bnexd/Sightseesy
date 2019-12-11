@@ -11,6 +11,12 @@ object Libs {
             const val analytics = "com.google.firebase:firebase-analytics:17.2.0"
             const val auth = "com.google.firebase:firebase-auth:19.1.0"
         }
+
+        object Dagger {
+            private const val version = "2.25.2"
+            const val dagger = "com.google.dagger:dagger:$version"
+            const val compiler = "com.google.dagger:dagger-compiler:$version"
+        }
     }
 
     object Kotlin {
@@ -93,6 +99,11 @@ object Libs {
             const val okHttp = "com.squareup.okhttp3:okhttp:$version"
             const val logging = "com.squareup.okhttp3:logging-interceptor:$version"
         }
+    }
+
+    object TomTom {
+        private const val version = "2.4340"
+        const val sdk = "com.tomtom.online:sdk-maps:$version"
     }
 
     object ReactiveX {
