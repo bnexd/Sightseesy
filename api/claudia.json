@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "sightseesy-api-executor",
+    "name": "sightseesy-api",
+    "region": "us-east-1"
+  },
+  "api": {
+    "id": "hrumm9wzrk",
+    "module": "app"
+  }
+}
