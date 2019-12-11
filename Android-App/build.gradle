@@ -1,0 +1,32 @@
+import com.tomtom.router.Libs
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath Libs.androidGradlePlugin
+
+        classpath Libs.Kotlin.gradlePlugin
+        classpath Libs.Kotlin.extensions
+
+        classpath Libs.AndroidX.Navigation.safeArgs
+
+        classpath Libs.Google.gmsGoogleServices
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://maven.tomtom.com:8443/nexus/content/repositories/releases/' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

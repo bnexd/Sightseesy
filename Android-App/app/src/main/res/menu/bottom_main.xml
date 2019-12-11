@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/menu_trips"
+        android:icon="@drawable/ic_travel_outline"
+        android:id="@+id/tripsFragment" />
+    <item
+        android:title="@string/menu_favorites"
+        android:icon="@drawable/ic_favourites"
+        android:id="@+id/favoritesFragment" />
+    <item
+        android:title="@string/menu_explore"
+        android:icon="@drawable/ic_explore"
+        android:id="@+id/exploreFragment" />
+    <item
+        android:title="@string/menu_profile"
+        android:icon="@drawable/ic_person_outline"
+        android:id="@+id/profileFragment" />
+</menu>

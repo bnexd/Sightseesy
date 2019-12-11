@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Router</string>
+    <string name="menu_trips">Trips</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="menu_explore">Explore</string>
+    <string name="menu_profile">Profile</string>
+</resources>

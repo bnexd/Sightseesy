@@ -1,0 +1,127 @@
+import com.tomtom.router.Libs
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.tomtom.router"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner Libs.AndroidX.Test.junitRunner
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+androidExtensions {
+    features = ["parcelize"]
+}
+
+kapt {
+    useBuildCache = true
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Libs.AndroidX.appCompat
+    implementation Libs.AndroidX.coreKtx
+    implementation Libs.AndroidX.constraintLayout
+    implementation Libs.AndroidX.recyclerView
+    implementation Libs.AndroidX.swipeRefreshLayout
+    implementation Libs.AndroidX.cardView
+
+    implementation Libs.AndroidX.Fragment.fragment
+    implementation Libs.AndroidX.Fragment.fragmentKtx
+
+    kapt Libs.AndroidX.Lifecycle.compiler
+    implementation Libs.AndroidX.Lifecycle.runtime
+    implementation Libs.AndroidX.Lifecycle.liveData
+    implementation Libs.AndroidX.Lifecycle.viewModel
+
+    kapt Libs.AndroidX.Room.compiler
+    implementation Libs.AndroidX.Room.runtime
+    implementation Libs.AndroidX.Room.ktx
+
+    implementation Libs.AndroidX.Navigation.ui
+    implementation Libs.AndroidX.Navigation.fragment
+
+    implementation Libs.Kotlin.stdlib
+    implementation Libs.Kotlin.reflect
+
+    implementation Libs.Kotlin.Coroutines.core
+    implementation Libs.Kotlin.Coroutines.android
+    implementation Libs.Kotlin.Coroutines.reactive
+    implementation Libs.Kotlin.Coroutines.rx2
+
+    implementation Libs.Google.material
+
+    implementation Libs.Google.Firebase.analytics
+    implementation Libs.Google.Firebase.auth
+
+    kapt Libs.Google.Dagger.compiler
+    implementation Libs.Google.Dagger.dagger
+
+    implementation Libs.Coil.coil
+
+    kapt Libs.Square.Moshi.codegen
+    implementation Libs.Square.Moshi.moshi
+
+    implementation Libs.Square.Retrofit.retrofit
+    implementation Libs.Square.Retrofit.moshiConverter
+    implementation Libs.Square.Retrofit.scalars
+
+    implementation Libs.Square.OkHttp.okHttp
+    implementation Libs.Square.OkHttp.logging
+
+    implementation Libs.ReactiveX.rxJava
+    implementation Libs.ReactiveX.rxAndroid
+    implementation Libs.ReactiveX.rxBinding
+    implementation Libs.ReactiveX.rxKotlin
+
+    implementation Libs.ThreeTen.threeTen
+
+    implementation Libs.TomTom.sdk
+
+    testImplementation Libs.Test.junit
+    androidTestImplementation Libs.AndroidX.Test.junitExt
+    androidTestImplementation Libs.AndroidX.Test.espressoCore
+}
+
+// Must be applied after dependencies
+if (file("google-services.json").exists()) {
+    apply plugin: 'com.google.gms.google-services'
+}

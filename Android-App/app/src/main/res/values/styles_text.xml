@@ -1,0 +1,5 @@
+<resources>
+
+    <style name="p" parent="TextAppearance.MaterialComponents.Body1"></style>
+
+</resources>
