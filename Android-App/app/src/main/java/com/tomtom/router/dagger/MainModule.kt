@@ -3,7 +3,6 @@ package com.tomtom.router.dagger
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
 import com.tomtom.router.data.TripRepository
-import com.tomtom.router.data.api.RetrofitServiceBuilder
 import com.tomtom.router.ui.trips.TripViewModel
 import com.tomtom.router.ui.trips.TripViewModelFactory
 import dagger.Module
@@ -18,7 +17,7 @@ abstract class MainModule {
         @JvmStatic
         @Provides
         fun provideTripRepository(): TripRepository {
-            return TripRepository.getInstance(RetrofitServiceBuilder.tripService)
+            return TripRepository.getInstance()
         }
 
         @JvmStatic
