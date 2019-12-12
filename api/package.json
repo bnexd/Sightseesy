@@ -25,6 +25,9 @@
   },
   "homepage": "https://github.com/bnexd/techcrunch-disrupt2019#readme",
   "dependencies": {
-    "claudia-api-builder": "^4.1.2"
+    "aws-sdk": "^2.588.0",
+    "axios": "^0.19.0",
+    "claudia-api-builder": "^4.1.2",
+    "node-fetch": "^2.6.0"
   }
 }
