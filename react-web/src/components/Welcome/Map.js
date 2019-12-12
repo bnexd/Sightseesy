@@ -25,7 +25,7 @@ export default class Map extends Component {
         const map = tt.map({
             key: "NcxRyApajRzivcKOxPHN3d130zYT2BO7",
             style: "tomtom://vector/1/basic-main/6",
-            zoom: 9,
+            zoom: 10,
             center: centerLocation,
             container: "map"
         });
@@ -38,18 +38,13 @@ export default class Map extends Component {
                 .addTo(map);
             marker.setPopup(new tt.Popup().setHTML("Fernsehturm"));
         });
+
         /*
         tomtom.services
             .calculateRoute({
                 key: "NcxRyApajRzivcKOxPHN3d130zYT2BO7",
-                locations:
-                    marker1.lon +
-                    "," +
-                    marker1.lat +
-                    ":" +
-                    marker2.lon +
-                    "," +
-                    marker2.lat,
+                locations: [],
+
                 computeBestOrder: true
             })
             .go()

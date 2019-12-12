@@ -26,7 +26,23 @@ const Search = () => {
                     .then(res => {
                         console.log(res);
                         console.log(res.data);
-                        setMarkers(res.data);
+                        setMarkers({
+                            m1: {
+                                name: "TV Tower",
+                                lat: "52.520652",
+                                lon: "13.409162"
+                            },
+                            m2: {
+                                name: "Berlin Wall",
+                                lon: "13.383763",
+                                lat: "52.507276"
+                            },
+                            m3: {
+                                name: "Reichstagsgebäude",
+                                lon: "13.375955",
+                                lat: "52.518126"
+                            }
+                        });
                     });
             } catch (error) {
                 alert(error);
