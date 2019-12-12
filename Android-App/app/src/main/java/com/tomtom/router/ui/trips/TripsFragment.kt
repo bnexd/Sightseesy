@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tomtom.router.R
 import com.tomtom.router.dagger.inject
-import com.tomtom.router.data.trips.TripItem
 import com.tomtom.router.databinding.FragmentTripsBinding
+import com.tomtom.router.model.TripItem
 import com.tomtom.router.ui.ScopedFragment
 import com.tomtom.router.ui.trips.adapter.TripItemAdapter
 import javax.inject.Inject
@@ -47,7 +47,8 @@ class TripsFragment : ScopedFragment(), TripItemAdapter.TripItemClickListener {
     }
 
     override fun onTripItemClicked(tripItem: TripItem) {
-        Toast.makeText(requireContext(), tripItem.city, Toast.LENGTH_LONG).show()
+        val action = TripsFragmentDirections.actionTripsFragmentToSelectedTripActivity(tripItem)
+        findNavController().navigate(action)
     }
 
     private fun setupTripItemAdapter(listener: TripItemAdapter.TripItemClickListener) {

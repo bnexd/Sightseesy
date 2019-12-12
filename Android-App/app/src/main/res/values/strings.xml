@@ -4,4 +4,5 @@
     <string name="menu_favorites">Favorites</string>
     <string name="menu_explore">Explore</string>
     <string name="menu_profile">Profile</string>
+    <string name="info">Info</string>
 </resources>

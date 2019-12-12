@@ -1,6 +1,6 @@
 package com.tomtom.router.data.api
 
-import com.tomtom.router.data.trips.TripItem
+import com.tomtom.router.model.TripItem
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

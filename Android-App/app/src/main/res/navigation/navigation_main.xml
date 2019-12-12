@@ -15,7 +15,11 @@
         android:id="@+id/tripsFragment"
         android:name="com.tomtom.router.ui.trips.TripsFragment"
         android:label="TripsFragment"
-        tools:layout="@layout/fragment_trips" />
+        tools:layout="@layout/fragment_trips">
+        <action
+            android:id="@+id/action_tripsFragment_to_selectedTripActivity"
+            app:destination="@id/selectedTripActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/exploreFragment"
@@ -34,5 +38,14 @@
         android:name="com.tomtom.router.ui.trips.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile" />
+    <activity
+        android:id="@+id/selectedTripActivity"
+        android:name="com.tomtom.router.ui.trips.SelectedTripActivity"
+        android:label="SelectedTripActivity"
+        tools:layout="@layout/activity_selected_trip">
+        <argument
+            android:name="tripItem"
+            app:argType="com.tomtom.router.model.TripItem" />
+    </activity>
 
 </navigation>

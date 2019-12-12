@@ -2,6 +2,7 @@ package com.tomtom.router.data.trips
 
 import com.tomtom.router.data.Result
 import com.tomtom.router.data.TripDao
+import com.tomtom.router.model.TripItem
 
 class TripRepository private constructor() : TripDao {
 
