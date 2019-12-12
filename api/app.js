@@ -117,6 +117,24 @@ const MOCK_DATA = {
 	}
 }
 
+const CITIES_LATLON = {
+	berlin: {
+		lat: '',
+		lon: ''
+	},
+	madrid: {
+		lat: '',
+		lon: ''
+	},
+	amsterdam: {
+		lat: '',
+		lon: ''
+	},
+	paris: {
+		lat: '',
+		lon: ''
+	},
+}
 module.exports = api;
 
 const TOMTOM_HOST = 'https://api.tomtom.com';
@@ -201,19 +219,32 @@ api.post('/points', function (req) {
 	return city ? MOCK_DATA[city] : MOCK_DATA['berlin'];
 });
 
-api.get('/trips/{city}', function (req) {
-	const city = req.pathParams.city;
-	const endpoint = 'routing/1/calculateRoute';
-	const params = `json?computeBestOrder=true&sectionType=travelMode&report=effectiveSettings&routeType=fastest&traffic=true&avoid=unpavedRoads&travelMode=pedestrian&key=${TOMTOM_KEY}`;
+api.get('/trips/{city}', async function (req) {
+	let {
+		city
+	} = req.pathParams;
+	let category = 'museum';
+	const endpoint = `search/2/poiSearch/${category}.json`;
+	lat = 52.509
+	lon = 13.429;
 
-	if (!city) return 'error';
+	const params = `&lat=${lat}&lon=${lon}&category=${category}&key=${TOMTOM_KEY}`;
 
 	const url = getURL(endpoint, params);
 
 	const response = await fetch(url);
 	const points = await response.json();
 
-	return points ? MOCK_DATA[city] : MOCK_DATA['berlin'];
+	const formattedPoints = points.results && points.results.map((point)=>{
+		return {
+			id: point.id,
+			name: point.poi.name,
+			position: point.position,
+			description: point.address ? point.address.freeformAddress : '',
+			image: ''
+		}
+	})
+	return formattedPoints;
 })
 
 api.addPostDeployConfig('tableName', 'DynamoDB Table Name:', 'configure-db');
