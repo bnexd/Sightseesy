@@ -30,14 +30,10 @@ import com.tomtom.router.ui.trips.adapter.PoiAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 
 
 class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
     TomtomMapCallback.OnMapLongClickListener, PoiAdapter.PoiClickListener {
-
-    @Inject
-    private lateinit var tripViewModel: TripViewModel
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
