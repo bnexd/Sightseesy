@@ -21,7 +21,6 @@ import com.tomtom.online.sdk.search.SearchApi
 import com.tomtom.online.sdk.search.data.reversegeocoder.ReverseGeocoderSearchQueryBuilder
 import com.tomtom.online.sdk.search.data.reversegeocoder.ReverseGeocoderSearchResponse
 import com.tomtom.router.R
-import com.tomtom.router.dagger.inject
 import com.tomtom.router.databinding.ActivitySelectedTripBinding
 import com.tomtom.router.model.Poi
 import com.tomtom.router.model.TripItem
@@ -53,7 +52,6 @@ class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
     private var wayPointPosition: LatLng? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        inject(this)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_selected_trip)
 

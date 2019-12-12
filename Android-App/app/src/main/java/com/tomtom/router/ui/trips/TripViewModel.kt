@@ -3,14 +3,10 @@ package com.tomtom.router.ui.trips
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.tomtom.router.data.Result
 import com.tomtom.router.data.TripRepository
 import com.tomtom.router.data.api.Position
 import com.tomtom.router.model.Poi
 import com.tomtom.router.model.TripItem
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 
 class TripViewModel(
     private val tripRepository: TripRepository
@@ -94,16 +90,4 @@ class TripViewModel(
         )
     }
 
-    suspend fun getTrip(city: String): TripItem {
-        val deferred = viewModelScope.async(Dispatchers.IO) { tripRepository.getTrip(city) }
-
-        return when (val result = deferred.await()) {
-            is Result.Success -> {
-                _currentTrip.postValue(result.data)
-                return result.data
-            }
-
-            is Result.Error -> throw result.exception
-        }
-    }
 }
