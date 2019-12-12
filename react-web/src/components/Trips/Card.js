@@ -9,7 +9,7 @@ export default class Card extends Component {
                     class="blog-card spring-fever"
                     style={{
                         background:
-                            "url(https://reise.naanoo.de/wp-content/uploads/2015/11/fernsehturm-berlin-331599182.jpg)",
+                            "url(https://reise.naanoo.de/wp-content/uploads/2015/11/fernsehturm-berlin-331599182.jpg) center",
                         backgroundSize: "215%"
                     }}
                 >

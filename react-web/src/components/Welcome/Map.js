@@ -32,11 +32,11 @@ export default class Map extends Component {
         const { markers } = this.props;
         Object.keys(markers).map(key => {
             var marker = markers[key];
-            console.log(marker);
+            var markerName = marker.name;
             marker = new tt.Marker()
                 .setLngLat([marker.lon, marker.lat])
                 .addTo(map);
-            marker.setPopup(new tt.Popup().setHTML("Fernsehturm"));
+            marker.setPopup(new tt.Popup().setHTML(markerName));
         });
 
         /*
