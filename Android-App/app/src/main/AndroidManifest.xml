@@ -32,7 +32,9 @@
             android:name="OnlineRouting.Key"
             android:value="tjGJYtmYxuK6CCuzTXmRYAGzjFaMVeNB" />
 
-        <activity android:name=".ui.trips.SelectedTripActivity">
+        <activity
+            android:name=".ui.trips.SelectedTripActivity"
+            android:theme="@style/AppTheme.TransparentStatusBar">
 
         </activity>
 

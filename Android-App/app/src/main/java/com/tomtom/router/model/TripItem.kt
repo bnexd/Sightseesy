@@ -2,16 +2,31 @@ package com.tomtom.router.model
 
 import android.os.Parcelable
 import androidx.recyclerview.widget.DiffUtil
-import com.tomtom.online.sdk.common.location.LatLng
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+import com.tomtom.router.data.api.Position
 import kotlinx.android.parcel.Parcelize
 
+@JsonClass(generateAdapter = true)
 @Parcelize
 data class TripItem(
+
+    @Json(name = "id")
     val id: String,
+
+    @Json(name = "city")
     val city: String,
-    val cityLatLng: LatLng,
+
+    @Json(name = "cityLatLng")
+    val cityPosition: Position,
+
+    @Json(name = "description")
     val description: String,
+
+    @Json(name = "image")
     val image: String,
+
+    @Json(name = "pois")
     val pois: List<Poi>
 ) : Parcelable
 

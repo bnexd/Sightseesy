@@ -5,7 +5,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RetrofitServiceBuilder {
 
-    private const val BASE_URL = "..."
+    private const val BASE_URL = ""
 
     private val builder: Retrofit.Builder by lazy {
         Retrofit.Builder()
