@@ -21,6 +21,7 @@ import com.tomtom.online.sdk.search.SearchApi
 import com.tomtom.online.sdk.search.data.reversegeocoder.ReverseGeocoderSearchQueryBuilder
 import com.tomtom.online.sdk.search.data.reversegeocoder.ReverseGeocoderSearchResponse
 import com.tomtom.router.R
+import com.tomtom.router.dagger.inject
 import com.tomtom.router.databinding.ActivitySelectedTripBinding
 import com.tomtom.router.model.Poi
 import com.tomtom.router.model.TripItem
@@ -29,10 +30,14 @@ import com.tomtom.router.ui.trips.adapter.PoiAdapter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
 
 class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
     TomtomMapCallback.OnMapLongClickListener, PoiAdapter.PoiClickListener {
+
+    @Inject
+    private lateinit var tripViewModel: TripViewModel
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
@@ -52,6 +57,7 @@ class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
     private var wayPointPosition: LatLng? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        inject(this)
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_selected_trip)
 
@@ -89,7 +95,7 @@ class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
         map.addOnMapLongClickListener(this)
         map.markerSettings.setMarkersClustering(true)
 
-        map.centerOn(CameraPosition.builder(args.tripItem.cityLatLng).zoom(7.0).build())
+        map.centerOn(CameraPosition.builder(args.tripItem.cityPosition.toLatLng()).zoom(7.0).build())
         map.markerSettings.markerBalloonViewAdapter = createCustomViewAdapter()
 
         map.setPadding(
@@ -99,8 +105,8 @@ class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
 
         val markers = arrayListOf<LatLng>()
         args.tripItem.pois.forEach {
-            createMarkerIfNotPresent(it.latLng, null)
-            markers.add(it.latLng)
+            createMarkerIfNotPresent(it.position.toLatLng(), null)
+            markers.add(it.position.toLatLng())
         }
         drawRoute(markers)
     }
@@ -329,7 +335,7 @@ class SelectedTripActivity : ScopedActivity(), OnMapReadyCallback,
     override fun onPoiClicked(poi: Poi) {
         Toast.makeText(this, poi.name, Toast.LENGTH_LONG).show()
 
-        map.centerOn(CameraPosition.builder(poi.latLng).zoom(16.0).build())
+        map.centerOn(CameraPosition.builder(poi.position.toLatLng()).zoom(16.0).build())
         map.markerSettings.markerBalloonViewAdapter = createCustomViewAdapter()
     }
 }

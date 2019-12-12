@@ -7,9 +7,9 @@ import retrofit2.http.Path
 
 interface TripService {
 
-    @GET("/")
-    suspend fun getAllTellsBySender(
-        @Path("id") id: String
-    ): Response<List<TripItem>>
+    @GET("trips/{city}")
+    suspend fun getTrip(
+        @Path("city") city: String
+    ): Response<TripItem>
 
 }
