@@ -3,12 +3,14 @@ package com.tomtom.router.ui.trips.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.tomtom.router.data.trips.TripItem
-import com.tomtom.router.data.trips.TripItemDiffCallback
 import com.tomtom.router.databinding.ViewholderTripBinding
+import com.tomtom.router.model.TripItem
+import com.tomtom.router.model.TripItemDiffCallback
 
 class TripItemAdapter(private val listener: TripItemClickListener) :
-    ListAdapter<TripItem, TripItemViewHolder>(TripItemDiffCallback) {
+    ListAdapter<TripItem, TripItemViewHolder>(
+        TripItemDiffCallback
+    ) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TripItemViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

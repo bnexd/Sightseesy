@@ -104,6 +104,11 @@ object Libs {
     object TomTom {
         private const val version = "2.4340"
         const val sdk = "com.tomtom.online:sdk-maps:$version"
+        const val routing = "com.tomtom.online:sdk-routing:$version"
+        const val search = "com.tomtom.online:sdk-search:$version"
+        const val ui = "com.tomtom.online:sdk-maps-ui-extensions:$version"
+        const val ktx = "com.tomtom.online:sdk-maps-ktx-extensions:$version"
+        const val styles = "com.tomtom.online:sdk-maps-styles-extensions:$version"
     }
 
     object ReactiveX {

@@ -2,8 +2,8 @@ package com.tomtom.router.ui.trips.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.api.load
-import com.tomtom.router.data.trips.TripItem
 import com.tomtom.router.databinding.ViewholderTripBinding
+import com.tomtom.router.model.TripItem
 
 class TripItemViewHolder(val binding: ViewholderTripBinding) :
     RecyclerView.ViewHolder(binding.root) {

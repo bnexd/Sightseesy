@@ -6,7 +6,7 @@
 
         <variable
             name="trip"
-            type="com.tomtom.router.data.trips.TripItem" />
+            type="com.tomtom.router.model.TripItem" />
     </data>
 
     <RelativeLayout
@@ -17,10 +17,11 @@
         android:layout_marginEnd="@dimen/margin_large">
 
         <androidx.cardview.widget.CardView
+            app:cardElevation="@dimen/margin_small"
             android:layout_width="match_parent"
             android:layout_height="128dp"
             android:orientation="vertical"
-            app:cardCornerRadius="@dimen/margin_medium">
+            app:cardCornerRadius="@dimen/margin_small">
 
             <ImageView
                 android:id="@+id/image_view_background"
